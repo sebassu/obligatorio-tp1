@@ -1,0 +1,218 @@
+﻿<!--
+	Obligatorio - Taller de Programación 1
+	Nombre: Sebastián Uriarte Güimil
+	Nº de estudiante: 194973
+	19/03/2015
+	Universidad ORT Uruguay
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Obligatorio - 19/03</title>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="script/jquery-2.1.3.js"></script>
+		<script type="text/javascript" src="script/jquery-ui/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="script/jquery-ui/datepicker-es.js"></script>
+		<script type="text/javascript" src="script/codigo.js"></script>
+		<link rel="stylesheet" style="text/css" href="CSS/Estilos.css">
+		<link rel="stylesheet" style="text/css" href="script/jquery-ui/jquery-ui.css">
+	</head>
+	<body>
+		<div id="principal">
+			<div id="barraIzq">
+				<h1 class="titulo" id="tituloMenu">Menú Principal:</h1>
+				Seleccione una opción:<br>
+				<button type="button" class="botonesIzq" id="btnaltaFuncionario">Alta de Funcionario</button>
+				<button type="button" class="botonesIzq" id="btnregConcepto">Registrar concepto</button>
+				<button type="button" class="botonesIzq" id="btningresoLinea" title="Para ingresar a esta opción han de haberse registrado por lo menos un funcionario y un concepto." disabled>Ingresar línea</button>
+				<button type="button" class="botonesIzq" id="btnconsultaSueldos">Consulta de sueldos</button>
+				<button type="button" class="botonesIzq" id="btnconsultaDinero">Consulta de dinero</button><br>
+			</div>
+			<div id="fondo">
+				<div id="inicial">
+					<img id="fotoBienv" src="imagenes/funcionarios.jpg" alt="Foto decorativa."><br> 
+					<br><br><br><br><br><h1 class="titulo" id="tituloInicial">Bienvenido:</h1>
+					<img id="imgFlecha" src="imagenes/Flecha.png" alt="Una flecha apuntando a la izquierda."> 
+					<p id="mensajeInicial">Para comenzar, seleccione una de las opciones del menú a la izquierda.</p>
+					<p id="nota">Nota: Página diseñada para ser visualizada en una resolución de 1920x1080.</p>
+				</div>
+
+				
+	<!-- ______________Opción Nº1: Alta de Funcionario_______________________________________________________________________________________________________________________________________________ -->		
+				<div class="contenidos" id="altaFuncionario">
+					<h2 class="titulo titulosContenido">Alta de Funcionario:</h2>
+					Complete los siguientes campos:
+					<table class="formularios">
+						<tr class="filaImpar">	
+							<td class="celda"><label for="nFuncionario">Número de Funcionario:</label></td>
+							<td class="celda celdaCampo"><input type="number" class="campo" id="nFuncionario"></td>
+							<td class="celda error" id="errornFuncionario"></td>
+						</tr>
+						<tr class="filaPar">	
+							<td class="celda">Fotografía del Funcionario:
+							<br><a id="actualizarFoto">(Actualizar)</a></td>
+							<td class="celda celdaCampo" id="celdaFoto"><img src="imagenes/errorImagen.jpg" class="imgFuncionario" id="imgFunc" title="La imagen del funcionario deberá estar en formato .jpg,
+							ubicada en la carpeta 'imagenes' del proyecto y tener como nombre de archivo un número de funcionario válido a ingresar en el campo superior." alt="la imagen del funcionario">
+							</td><td class="celda error" id="warningImagen"></td>
+						</tr>
+						<tr class="filaImpar">
+							<td class="celda"><label for="nomFunc">Nombre:</label></td>
+							<td class="celda celdaCampo"><input type="text" class="campo" id="nomFunc"></td>
+							<td class="celda error" id="errornomFunc"></td>
+						</tr>
+						<tr class="filaPar">
+							<td class="celda"><label for="apellidoFunc">Apellido:</label></td>
+							<td class="celda celdaCampo"><input type="text" class="campo" id="apellidoFunc"></td>
+							<td class="celda error" id="errorapellidoFunc"></td>
+						</tr>
+						<tr class="filaImpar">
+							<td class="celda"><label for="direccionFunc">Dirección:</label></td>
+							<td class="celda celdaCampo"><input type="text" class="campo" id="direccionFunc"></td>
+							<td class="celda error" id="errordireccionFunc"></td>
+						</tr>
+						<tr class="filaPar">
+							<td class="celda"><label for="selectSecFunc">Sección asignada:</label></td>
+							<td class="celda celdaCampo"><select class="campo" id="selectSecFunc">
+							  <option value="1" selected>1 - Administración</option>
+							  <option value="2">2 - Ventas</option>
+							  <option value="3">3 - Fábrica</option>
+							  <option value="4">4 - Directorio</option>
+							</select></td>
+						</tr>
+						<tr class="filaImpar">
+							<td class="celda nombreCampo"><label for="fechaFunc">Fecha de ingreso a la empresa:</label></td>
+							<td class="celda celdaCampo"><input type="text" class="campo" id="fechaFunc" placeholder="DD/MM/AAAA"></td>
+							<td class="celda error" id="errorfechaFunc"></td>
+						</tr>
+					</table>
+					<button type="button" id="resetFunc">Reestablecer</button>
+					<button type="button" class="confirmacion" id="confirmacionFunc">Aceptar</button>
+				</div>
+				
+				
+	<!-- ______________Opción Nº2: Registrar Concepto________________________________________________________________________________________________________________________________________________ -->				
+				<div class="contenidos" id="regConcepto">
+					<h2 class="titulo titulosContenido" id="tituloRegConc">Registrar concepto:</h2>
+					Complete los siguientes campos:
+					<table class="formularios" id="tablaRegConc">
+						<tr class="filaImpar">	
+							<td class="celda"><label for="nomConc">Nombre del Concepto:</label></td>
+							<td class="celda celdaCampo"><input type="text" class="campo" id="nomConc"></td>
+							<td class="celda error" id="errornomConc"></td>
+						</tr>
+						<tr class="filaPar">	
+							<td class="celda">Tipo de Concepto:</td>
+							<td class="celda" id="celdaRadioButtons">
+								<input type="radio" name="tipoConc" id="radioS" class="radiobutton" checked>Salida<br>
+								<input type="radio" name="tipoConc" class="radiobutton">Entrada
+							</td>
+						</tr>
+					</table>
+					<button type="button" class="confirmacion confirmacionUnico" id="confirmacionConc">Aceptar</button>
+				</div>
+				
+
+	<!-- ______________Opción Nº3: Ingresar Línea____________________________________________________________________________________________________________________________________________________ -->
+				<div class="contenidos" id="ingresoLinea">
+					<h2 class="titulo titulosContenido" id="tituloIngLinea">Ingreso Línea:</h2>
+					Complete los siguientes campos:
+					<table class="formularios" id="tablaIngLinea">
+						<tr class="filaImpar">	
+							<td class="celda"><label for="selectFuncionario">Funcionario:</label></td>
+							<td class="celda celdaCampo"><select id="selectFuncionario" class="campo"></select></td>
+						</tr>
+						<tr class="filaPar">
+							<td class="celda"><label for="selectConcepto">Concepto:</label></td>
+							<td class="celda celdaCampo"><select id="selectConcepto" class="campo"></select></td>
+							<td class="celda error" id="warningSobreescribe"></td>
+						</tr>
+						<tr class="filaImpar">	
+							<td class="celda"><label for="importe">Importe:</label></td>
+							<td class="celda celdaCampo"><input type="number" class="campo" id="importe" placeholder="($)"></td>
+							<td class="celda error" id="errorimporte"></td>
+						</tr>
+					</table>
+					<button type="button" class="confirmacion confirmacionUnico" id="confirmacionLinea">Aceptar</button>
+				</div>
+				
+				
+	<!--______________Opción Nº4: Consulta Sueldos____________________________________________________________________________________________________________________________________________________-->
+				<div class="contenidos" id="consultaSueldos">
+					<h2 class="titulo titulosContenido">Consulta de Sueldos:</h2>
+					Seleccione una sección a desplegar:
+					<div class="divTabs" id="tabsSueldos">
+						<ul>
+							<li><a href="#tabsSueldos-1">Administración</a></li>
+							<li><a href="#tabsSueldos-2">Fábrica</a></li>
+							<li><a href="#tabsSueldos-3">Ventas</a></li>
+							<li><a href="#tabsSueldos-4">Directorio</a></li>
+						</ul>
+						<div class="fondoTablaOverflow" id="tabsSueldos-1"></div>
+						<div class="fondoTablaOverflow" id="tabsSueldos-2"></div>
+						<div class="fondoTablaOverflow" id="tabsSueldos-3"></div>
+						<div class="fondoTablaOverflow" id="tabsSueldos-4"></div>	
+					</div>
+				</div>
+				<div id="masInformacion">
+					<h2 class="titulo titulosContenido" id="tituloDetalle">Detalle del Funcionario:</h2>
+					<div class="contenedorMasInfo" id="contenedorTabla">
+						<table class="formularios" id="tablaMasInfo">
+							<tr class="filaPar">	
+								<td class="celda">Fotografía del Funcionario:</td>
+								<td class="celda celdaCampo celdaMostrar" id="celdaFotoInfo">
+								<img src="imagenes/errorImagen.jpg" class="imgFuncionario" id="imgMasInfo" alt="La imagen del funcionario"></td>
+							</tr>
+							<tr class="filaImpar">	
+								<td class="celda">Número de Funcionario:</td>
+								<td class="celda celdaCampo celdaMostrar" id="nMasInfo"></td>
+							</tr>
+							<tr class="filaPar">
+								<td class="celda">Nombre:</td>
+								<td class="celda celdaCampo celdaMostrar" id="nomMasInfo"></td>
+							</tr>
+							<tr class="filaImpar">
+								<td class="celda">Apellido:</td>
+								<td class="celda celdaCampo celdaMostrar" id="apellidoMasInfo"></td>
+							</tr>
+							<tr class="filaPar">
+								<td class="celda">Dirección:</td>
+								<td class="celda celdaCampo celdaMostrar" id="direccionMasInfo"></td>
+							</tr>
+							<tr class="filaImpar">
+								<td class="celda">Sección asignada:</td>
+								<td class="celda celdaCampo celdaMostrar" id="seccionMasInfo"></td>
+							</tr>
+							<tr class="filaPar">
+								<td class="celda nombreCampo">Fecha de ingreso a la empresa:</td>
+								<td class="celda celdaCampo celdaMostrar" id="fechaMasInfo"></td>
+							</tr>
+						</table>
+						<div id="subtituloliq"><h3>Liquidación:</h3></div>
+						<div id="divLineas">
+						</div>
+					</div>
+				</div>
+
+
+	<!-- ______________Opción Nº5: Consulta de Dinero________________________________________________________________________________________________________________________________________________ -->	
+				<div class="contenidos" id="consultaDinero">
+					<h2 class="titulo titulosContenido" id="tituloConsultaDinero">Consulta de Dinero:</h2>
+					Seleccione una sección:<br>
+					<div class="divTabs" id="tabsDinero">
+						<ul>
+							<li><a href="#tabsDinero-1">Administración</a></li>
+							<li><a href="#tabsDinero-2">Fábrica</a></li>
+							<li><a href="#tabsDinero-3">Ventas</a></li>
+							<li><a href="#tabsDinero-4">Directorio</a></li>
+						</ul>
+						<div class="fondoTablaOverflow" id="tabsDinero-1"></div>
+						<div class="fondoTablaOverflow" id="tabsDinero-2"></div>
+						<div class="fondoTablaOverflow" id="tabsDinero-3"></div>
+						<div class="fondoTablaOverflow" id="tabsDinero-4"></div>	
+					</div>
+				</div>
+			</div>	
+		</div>
+	</body>
+</html>

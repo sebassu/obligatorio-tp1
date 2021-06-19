@@ -1,0 +1,319 @@
+/*
+	Obligatorio - Taller de Programación 1
+	Nombre: Sebastián Uriarte Güimil
+	Nº de estudiante: 194973
+	19/03/2015
+	Universidad ORT Uruguay
+*/
+
+html{
+	background-color:DarkGray;
+}
+*{
+	margin:0px;
+	padding:0px;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+}
+div#principal{
+	height:967px;
+}
+div#barraIzq{
+	width:25%;
+	float:left;
+	height:100%;
+	margin-left:0.14%;
+	border-left:3px solid black;
+	background-color:rgb(53,99,125);
+	text-align:center;
+	padding-top:75px;
+	font-size:125%;
+}
+div#fondo{
+	float:left;
+	width:73.81%;
+	margin-left:1.05%;
+	height:100%;
+	background-color:rgb(202,202,202);
+}
+.titulo{
+	font-family:Georgia;
+	text-decoration:underline;
+}
+td#warningSobreescribe{
+	color:Yellow;
+}
+h1#tituloMenu{
+	vertical-align:center;
+	margin-bottom:25px;
+}
+button.botonesIzq{
+	width:67%;
+	height:55px;
+	clear:right;
+	margin-bottom:75px;
+	vertical-align:center;
+	font-size:75%;
+}
+button#btnaltaFuncionario{
+	margin-top:80px;
+}
+div#inicial{
+	position:relative;
+	top:31%;
+}
+p#nota{
+	position:absolute;
+	left:72%;
+	top:195%;
+	font-size:110%;
+	width:25%;
+}
+img#fotoBienv{
+	position:absolute;
+	top:-45%;
+	left:70%;
+	width:350px;
+	height:339px;
+	border:3px solid Black;
+}
+h1#tituloInicial{
+	font-size:227%;
+	margin-left:245px;
+	margin-bottom:65px;
+}
+p#mensajeInicial{
+	font-family:Arial;
+	font-size:220%;
+}
+img#imgFlecha{
+	margin-left:55px;
+	margin-right:27px;
+	float:left;
+}
+div.contenidos{
+	width:80%;
+	margin:70px auto 0px auto;
+	font-size:120%;
+	display:none;
+}
+h2.titulosContenido{
+	margin-bottom:35px;
+}
+table.formularios{
+	width:100%;
+	margin-top:45px;
+	margin-left:7.5%;
+	font-size:97%;
+	margin-bottom:60px;
+}
+td.celda{
+	width:30%;
+	min-width:120px;
+	height:50px;
+	vertical-align:center;
+	border:2px solid black;
+	font-weight:bold;
+	padding-left:1.5%;
+}
+th.encabezado{
+	width:30%;
+	min-width:120px;
+	height:50px;
+	vertical-align:center;
+	border:2px solid black;
+	font-weight:bold;
+	text-decoration:underline;
+	background-color:rgb(53,99,125);
+	font-family:Georgia;
+	font-size:110%;
+	padding-left:1.5%;
+}
+tr.filaImpar{
+	background-color:rgb(147,149,159);
+}
+tr.filaPar{
+	background-color:SteelBlue;
+}
+td.celdaCampo{
+	width:41%;
+	text-align:center;
+	padding-left:0px;
+}
+td.celdaMostrar{
+	font-family:Arial;
+	font-weight:normal;
+	font-size:140%;
+}
+.campo{
+	width:88%;
+	height:33px;
+	font-size:97%;
+	font-weight:normal;
+	text-align:center;
+}
+img.imgFuncionario{
+	margin-top:8px;
+	width:250px;
+	height:250px;
+	border:2px solid black;
+	opacity:0.92;
+}
+table.formularios td.error{
+	color:Red;
+	font-size:95%;
+	border:0px;
+	font-weight:normal;
+	background:rgb(202,202,202);
+}
+td#warningImagen{
+	color:Yellow;
+}
+button#resetFunc{
+	width:10%;
+	height:35px;
+	margin-left:57%;
+	min-width:86px;
+}
+button.confirmacion{
+	width:8%;
+	height:35px;
+	min-width:60px;
+}
+button#confirmacionFunc{
+	margin-left:3%;
+}
+table#tablaRegConc{
+	margin-top:100px;
+	height:310px;
+}
+td#celdaRadioButtons{
+	text-align:left;
+	font-size:20px;
+}
+input.radiobutton{
+	margin:13px 5px 13px 35%;
+}
+button.confirmacionUnico{
+	width:10%;
+	height:55px;
+	margin-top:60px;
+	margin-left:70%;	
+}
+table#tablaIngLinea{
+	margin-top:90px;
+	height:420px;	
+}
+div.fondoTablaOverflow{
+	width:100%;
+	overflow-x:auto;
+	overflow-y:auto;
+	height:690px;
+	margin-top:15px;
+	text-align:center;
+}
+table.tablaAncha{
+	width:100%;
+	font-family:Arial;
+}
+table.linearGradient{
+	 background: linear-gradient(to top left, DarkGray, rgba(255,0,0,0));
+}
+button#seccion1{
+	margin-left:3%;
+}
+fieldset.fieldsetDinero{
+	margin-top:55px;
+	width:49.5%;
+	float:left;
+	text-align:center;
+}
+img.iconosInf{
+	float:left;
+	box-sizing:content-box;
+	-webkit-box-sizing:content-box;
+	-moz-box-sizing:content-box;
+	margin-right:10px;
+	margin-top:10px;
+}
+div.divAux{
+	float:left;
+	width:82%;
+}
+a#actualizarFoto{
+	margin-left:10px;
+	font-size:90%;
+	color:Blue;
+	cursor:pointer;
+}
+div.divTabs{
+	margin-top:20px;
+}
+img.masInfo{
+	margin-left:40%;
+	margin-bottom:10px;
+	cursor:pointer;
+}
+h2#tituloDetalle{
+	margin-top:40px;
+	margin-left:10px;
+}
+div#masInformacion{
+	margin:80px auto 0px 6%;
+	height:850px;
+	font-size:120%;
+	display:none;
+}
+table#tablaMasInfo{
+	width:45%;
+	height:660px;
+	float:left;
+	margin:50px 0px 0px 3%;
+}
+table#tablaLineas{
+	margin:15px auto 15px auto;
+}
+div#divLineas{
+	float:right;
+	width:45%;
+	height:660px;
+	margin:50px 4% 0px 0px;
+	border:3px solid Black;
+	padding:0px;
+	background-color:SteelBlue;
+	overflow-x:auto;
+	overflow-y:auto;
+}
+div#subtituloliq{
+	font-family:Georgia;
+	position:absolute;
+	margin-left:710px;
+}
+div.sinDatos{
+	margin-left:24%;
+	margin-top:200px;
+	font-family:Arial;
+	font-size:160%;
+}
+fieldset#billetes{
+	float:left;
+}
+fieldset#monedas{
+	float:right;
+	margin-top:110px;
+	margin-bottom:65px;
+}
+table.tablasDinero{
+	width:97%;
+	margin:0px auto 0px auto;
+}
+td.pie{
+	background-color:rgb(99,99,99);
+}
+span.negativo{
+	color:Red;
+}
+div#granTotalSueldos{
+	font-weight:Bold;
+}
